@@ -1,0 +1,2 @@
+centos60 ansible_ssh_host=192.168.131.100
+centos61 ansible_ssh_host=192.168.131.101

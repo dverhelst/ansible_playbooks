@@ -1,7 +1,18 @@
 ---
-- hosts: 192.168.13.200
-  user: root
+- hosts: all
+  user: vagrant
+  sudo: True
+
+  pre_tasks:
+    - name: enable yum repos
+      yum: name=http://epel.mirror.nucleus.be/6/i386/epel-release-6-8.noarch.rpm state=present
+
+  roles: []
+
+- hosts: centos61
+  user: vagrant
+  sudo: True
+
   roles:
-    - { role: yumrepos, repos: [epel]}
     - one_core
     - one_sunstone
